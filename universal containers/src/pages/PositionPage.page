@@ -1,0 +1,15 @@
+<apex:page StandardController="Position__c" recordSetvar="plist" >
+<apex:pageBlock >
+<apex:PageBlockSection title="PositionData">
+ <apex:pageBlockTable value="{!plist}" var="p">
+ <apex:column value="{!p.name}"/>
+ <apex:column value="{!p.Department__c}"/>
+ <apex:column value="{!p.Status__c}"/>
+ </apex:pageBlockTable>
+</apex:PageBlockSection>
+<apex:pageBlockSection >
+<apex:enhancedList type="Position__c" rowsPerPage="10" height="500" width="100" />
+</apex:pageBlockSection>
+</apex:pageBlock>
+
+</apex:page>

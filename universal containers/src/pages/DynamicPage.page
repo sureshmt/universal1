@@ -1,0 +1,24 @@
+<apex:page controller="Dcontroller">
+
+<apex:form >
+<apex:panelGrid columns="2" width="100%" border="2">
+<apex:outputPanel >
+<apex:commandButton value="Display Objects" action="{!displayObjects}"/>
+<br/>
+<apex:DataList value="{!objname}" var="obj">
+{!obj}
+</apex:DataList>
+</apex:outputPanel>
+<apex:outputPanel >
+<apex:inputText size="10" value="{!oname}"/>
+<apex:commandButton value="Dispaly fields" action="{!DisplayFields}"/>
+<br/>
+<apex:DataList value="{!fieldlist}" var="obj">
+{!obj}
+</apex:DataList>
+</apex:outputPanel>
+</apex:panelGrid>
+
+</apex:form>
+
+</apex:page>

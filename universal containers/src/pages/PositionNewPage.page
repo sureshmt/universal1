@@ -1,0 +1,24 @@
+<apex:page standardController="Position__c" extensions="positionCalcController">
+<apex:form >
+    <apex:pageBlock >
+    <apex:pageBlockSection title="Position Info">
+    <apex:inputField value="{!Position__c.name}"/>
+    <apex:inputField value="{!Position__c.Department__c}"/>
+    <apex:inputField value="{!Position__c.Hiring_Manager__c}"/>
+    <apex:inputField value="{!Position__c.Job_Description__c}"/>
+    <apex:inputField value="{!Position__c.Min_Pay__c}"/>
+    <apex:inputField value="{!Position__c.Max_Pay__c}"/>
+    </apex:pageBlockSection>
+    <apex:pageBlockSection >
+     <apex:commandButton value="Calculate VF" action="{!calc}"/>
+     <apex:inputText size="30" label="Variable Pay " value="{!vpay}"/>
+     <apex:inputText size="30" label="Gross pay" value="{!gross}"/>
+    </apex:pageBlockSection>
+    <apex:pageBlockButtons >
+      <apex:commandButton value="Save record" action="{!Save}"/>
+      <apex:commandButton value="Cancel" action="{!cancel}"/>
+    </apex:pageBlockButtons>
+    </apex:pageBlock>
+</apex:form>
+
+</apex:page>

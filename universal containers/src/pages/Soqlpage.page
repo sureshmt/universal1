@@ -1,0 +1,13 @@
+<apex:page controller="SoqlController">
+<apex:PageBlock >
+<apex:form >
+<apex:inputText label="Enter the object" value="{!objName}"/>
+<apex:inputText label="Enter the fields" value="{!objField}"/>
+<apex:commandButton value="Query" action="{!display}"/>
+<apex:dataList value="{!reclist}" var="obj">
+{!obj}
+</apex:dataList>
+<apex:outputtext value="{!errMsg}"/>
+</apex:form>
+</apex:PageBlock>
+</apex:page>

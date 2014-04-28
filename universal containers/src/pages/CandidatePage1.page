@@ -1,0 +1,19 @@
+<apex:page standardController="Candidate__c" extensions="WizardController">
+<apex:pageBlock >
+<apex:form >
+
+        <apex:pageMessages ></apex:pageMessages>>
+        <apex:pageblockSection >
+        <apex:inputText size="30" label="First Name" value="{!Candidate__c.First_Name__c}"/>
+         <apex:inputText size="30" label="Last Name" value="{!Candidate__c.Last_Name__c}"/>
+    
+        </apex:pageblockSection>
+    
+    <apex:pageblockSection >
+      <apex:commandButton value="Next Step" action="{!showNext}"/>
+    </apex:pageblockSection>
+
+
+</apex:form>
+</apex:pageBlock>
+</apex:page>

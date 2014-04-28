@@ -1,0 +1,40 @@
+<apex:page >
+<script src="/soap/ajax/18.0/connection.js"></script>
+<script src="/soap/ajax/18.0/apex.js"></script>
+<script>
+function loaddata(c1,c2,c3,c4,res){
+fname=document.getElementById(c1).value;
+lname=document.getElementById(c2).value;
+state=document.getElementById(c3).value;
+city=document.getElementById(c4).value;
+sforce.connection.init('{!$Api.session_id}','{!$Api.partner_server_url_140}');
+
+document.getElementById(res).innerHTML=sforce.apex.execute('WebServiceWSdemo','insertCase',{firstname:fname,lastname:lname,State:state,city:city});
+}
+
+</script>
+
+<apex:form >
+<apex:outputLabel value="firstname">
+ &nbsp; <apex:inputText id="c1" size="10" />
+ </apex:outputLabel>
+  &nbsp;
+  <apex:outputLabel value="lastname">
+ &nbsp; <apex:inputText id="c2" size="10" />
+ </apex:outputLabel>
+ 
+ <apex:outputLabel value="State">
+ &nbsp; <apex:inputText id="c3" size="10" />
+ </apex:outputLabel>
+  &nbsp;
+  <apex:outputLabel value="city">
+ &nbsp; <apex:inputText id="c4" size="10" />
+ </apex:outputLabel>
+ 
+  <apex:outputlabel StyleClass="btn" onclick="javascript:loaddata('{!$Component.c1}','{!$Component.c2}','{!$Component.c3}','{!$Component.c4}','{!$Component.res}')">Insert Case
+  </apex:outputlabel>
+  
+  <apex:outputText id="res" style="font-size:25px"/>
+</apex:form>
+
+</apex:page>

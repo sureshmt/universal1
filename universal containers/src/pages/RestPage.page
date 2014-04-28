@@ -1,0 +1,10 @@
+<apex:page controller="RestController" >
+<apex:form >
+<apex:pageBlock >
+
+<apex:commandButton value="Display" action="{!show}"/>
+<apex:outputText value="{!res}"/>
+</apex:pageBlock> 
+</apex:form>
+
+</apex:page>

@@ -1,0 +1,39 @@
+<apex:page controller="LogController">
+<script>
+function validate(un,pw){
+
+    var uname=document.getElementById(un).value;
+    var pw=document.getElementById(pw).value;
+    if(uname=='' || pw==''){
+    alert('Please enter username and password');
+    
+    }else{
+       fn1(uname,pw);
+    
+    }
+}
+
+</script>
+<apex:pageBlock >
+<apex:form >
+<apex:pageblockSection title="Login" columns="1">
+<apex:inputText size="20" label="User name" id="un"/>
+<apex:inputSecret size="20" label="Password" id="pw"/>
+<apex:outputPanel styleClass="btn" onclick="validate('{!$Component.un}','{!$Component.pw}')">Login</apex:outputPanel>
+
+
+<apex:actionFunction name="fn1" action="{!check}" reRender="op" status="mystatus">
+<apex:param name="uname" value="" assignTo="{!username}"/>
+<apex:param name="pw" value="" assignTo="{!password}"/>
+
+</apex:actionFunction>
+<apex:actionStatus startText="Loading...." id="mystatus"></apex:actionStatus>
+
+<apex:outputPanel id="op">
+<apex:outputText style="clolr:red" value="{!result}"></apex:outputText>
+</apex:outputPanel>
+</apex:pageblockSection>
+</apex:form>
+</apex:pageBlock>
+  
+</apex:page>

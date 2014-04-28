@@ -1,0 +1,14 @@
+<apex:page Controller="SuccessController" >
+<apex:pageBlock >
+<apex:form >
+
+        
+        <apex:pageblockSection >
+        <apex:outputText value="{!tMsg}"/>
+        
+        </apex:pageblockSection>
+
+
+</apex:form>
+</apex:pageBlock>
+</apex:page>
